@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "open=false": {"model": "test_mod:block/phase_block_unphased"},
+    "open=true": {"model": "test_mod:block/phase_block_phased"}
+  }
+}

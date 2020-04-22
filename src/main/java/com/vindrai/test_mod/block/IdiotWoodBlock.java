@@ -3,16 +3,20 @@ package com.vindrai.test_mod.block;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.HorizontalBlock;
+import net.minecraft.block.SoundType;
 import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.state.StateContainer;
 import net.minecraft.util.Direction;
 import net.minecraft.util.Mirror;
 import net.minecraft.util.Rotation;
 
+import static net.minecraft.block.SoundType.*;
+
 public class IdiotWoodBlock extends HorizontalBlock {
 
     public IdiotWoodBlock(final Properties properties){
         super(properties);
+
         // Set the default values for our blockstate properties
         this.setDefaultState(this.getDefaultState()
                 .with(HORIZONTAL_FACING, Direction.NORTH)

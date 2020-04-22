@@ -21,26 +21,21 @@ public final class ModEventSubscriber {
 
     @SubscribeEvent
     public static void onRegisterItems(RegistryEvent.Register<Item> event){
+
         final IForgeRegistry<Item> registry = event.getRegistry();
 
         event.getRegistry().registerAll(setup(new Item(new Item.Properties().group(ModItemGroups.MOD_ITEM_GROUP)), "idiot_baton"));
 
-
         ModBlocks.BLOCKS.getEntries().stream().map(RegistryObject::get)
                 .forEach(block -> {
-                    final Item.Properties properties = new Item.Properties().group(ModItemGroups.MOD_ITEM_GROUP);
+                    final Item.Properties properties = new Item.Properties().group(ModItemGroups.MOD_BLOCK_GROUP);
                     final BlockItem blockItem = new BlockItem(block, properties);
                     blockItem.setRegistryName(block.getRegistryName());
+                    LOGGER.debug(block.getRegistryName());
                     registry.register(blockItem);
                 });
         LOGGER.debug("Registered BlockItems");
     }
-
-    /*@SubscribeEvent
-    public static void onRegisterBlocks(RegistryEvent.Register<Block> event){
-        event.getRegistry().registerAll(setup(new Block(Block.Properties.create(Material.WOOD).hardnessAndResistance(3.0f, 3.0f)), "idiot_wood"));
-
-    }*/
 
     public static <T extends IForgeRegistryEntry<T>> T setup(final T entry, final String name) {
         return setup(entry, new ResourceLocation(TestMod.MODID, name));

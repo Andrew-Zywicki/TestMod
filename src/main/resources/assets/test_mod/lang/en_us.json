@@ -1,5 +1,7 @@
 {
   "item.test_mod.idiot_baton": "Idiot Baton",
   "block.test_mod.idiot_wood": "Idiot Wood",
-  "itemGroup.test_mod": "Test Mod"
+  "block.test_mod.phase_block": "Phase Block",
+  "itemGroup.test_mod": "Test Mod Items",
+  "itemGroup.test_mod.Blocks": "Test Mod Blocks"
 }
