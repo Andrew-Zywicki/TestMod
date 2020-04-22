@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": {"model": "test_mod:block/idiot_wood"},
+    "facing=south": {"model": "test_mod:block/idiot_wood", "y": 180},
+    "facing=east": {"model": "test_mod:block/idiot_wood", "y": 90},
+    "facing=west": {"model": "test_mod:block/idiot_wood", "y": 270}
+  }
+}
